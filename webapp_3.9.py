@@ -46,14 +46,14 @@ dor_dot = dor_dot * 10000
 features = np.array([[rad_score, dor_dot, liver_cirrhosis]])
 
 # 预测按钮
-if st.button("预测"):
+if st.button("PREDICT"):
     # 预测类别和概率
     predicted_class = model.predict(features)[0]
     predicted_proba = model.predict_proba(features)[0]
     
     # 显示预测结果
-    st.write(f"**预测类别:** {predicted_class}")
-    st.write(f"**预测概率:** {predicted_proba}")
+    st.write(f"**Predict Class:** {predicted_class}")
+    st.write(f"**Predict Prohibilities:** {predicted_proba}")
 
 
 # In[ ]:
