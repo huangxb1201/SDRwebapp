@@ -51,9 +51,15 @@ if st.button("PREDICT"):
     predicted_class = model.predict(features)[0]
     predicted_proba = model.predict_proba(features)[0]
     
+    # 根据预测类别显示不同的结果
+    if predicted_class == 0:
+        result_text = "SD Non Benefiting (SDNB)"
+    else:
+        result_text = "SD Benefiting (SDB)"
+    
     # 显示预测结果
-    st.write(f"**Predict Class:** {predicted_class}")
-    st.write(f"**Predict Prohibilities:** {predicted_proba}")
+    st.write(f"**Predict Class:** {result_text}")
+    st.write(f"**Predict Probabilities:** {predicted_proba}")
 
 
 # In[ ]:
